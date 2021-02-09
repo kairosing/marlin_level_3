@@ -27,7 +27,7 @@
                             <li>Редактировать данные пользователей</li>
                             <li>Удалять пользователей</li>
                         </ul>
-                        <a href="#" class="btn btn-primary">Перейти на главную страницу</a>
+                        <a href="page.php" class="btn btn-primary">Перейти на главную страницу</a>
                     </div>
                 </div>
             </div>

@@ -36,7 +36,7 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
             <br>
-            <a href="" class="btn btn-success">Add new user</a>
+            <a href="create.php" class="btn btn-success">Add new user</a>
             <hr>
             <div class="alert alert-success"></div>
                 <table class="table">
@@ -48,13 +48,15 @@
                         <th></th>
                     </thead>
                     <tbody>
+                    <?php foreach ($users as $user):?>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a href=""class="btn btn-warning">Edit</a></td>
-                            <td><a href=""class="btn btn-danger" onclick="return confirm('Delete this user?');">Delete</a></td>
+                            <td><?php echo $user['id']?></td>
+                            <td><?php echo $user['username']?></td>
+                            <td><?php echo $user['email']?></td>
+                            <td><a href="edit.php" class="btn btn-warning">Edit</a></td>
+                            <td><a href="delete.php" class="btn btn-danger" onclick="return confirm('Delete this user?');">Delete</a></td>
                         </tr>
+                    <?php endforeach;?>
                     </tbody>
                 </table>
             </div>
