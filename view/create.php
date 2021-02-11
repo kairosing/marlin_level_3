@@ -16,11 +16,11 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h1>Create new user</h1>
-                <form action="" method="post" class="form-control">
+                <form action="../store.php" method="POST" class="form-control">
                     <label for="username" class="col-form-label">User name</label>
-                    <input type="text"  class="form-control" placeholder="User name">
+                    <input type="text" name="username"  class="form-control" placeholder="Username">
                     <label for="email" class="col-form-label">Email</label>
-                    <input type="text"  class="form-control" placeholder="Email" >
+                    <input type="text"  name="email" class="form-control" placeholder="Email" >
                     <hr>
                     <button type="submit" class="btn btn-success">Create</button>
                 </form>
