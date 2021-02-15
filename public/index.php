@@ -2,7 +2,8 @@
 
 
 include "../functions/functions.php";
-include "../componets/Routes.php";
+include "../components/Routes.php";
+include "../components/Flash.php";
 
 $config = include "../config.php";
 Routes::page($config['routes']);

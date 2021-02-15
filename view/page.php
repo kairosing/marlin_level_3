@@ -46,7 +46,10 @@ $users = $db->getAll('users');
             <br>
             <a href="../view/create.php" class="btn btn-success">Add new user</a>
             <hr>
+                <?php if (Flash::exists('success')):?>
             <div class="alert alert-success"></div>
+                <?php echo Flash::display('success')?>
+            <?php endif;?>
                 <table class="table">
                     <thead class="table">
                         <th>#</th>

@@ -1,6 +1,7 @@
 <?php
 include "../functions/functions.php";
 $db = include "../database/start.php";
+include "../components/Flash.php";
 
 $id = $_GET['id'];
 $user = $db->getOne('users', $id);
@@ -26,10 +27,21 @@ $user = $db->getOne('users', $id);
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
-                <h1>Edit user -</h1>
-                <div class="alert alert-danger"></div>
-                    <div class="alert alert-success">
-                    </div>
+                <h1>Профиль пользователя <?php echo $user['username'];?></h1>
+
+                <?php if (Flash::flashExists('danger')):?>
+                <div class="alert alert-danger">
+                    <?php Flash::flashString('danger');?>
+                </div>
+                <?php endif;?>
+
+                <?php if (Flash::flashExists('danger')):?>
+                <div class="alert alert-success">
+                    <?php Flash::flashString('danger');?>
+                </div>
+                <?php endif;?>
+
+
                 <form action="../update.php?id=<?php echo $user['id'];?>" method="post" class="form-control">
                     <label for="username" class="col-form-label">User name</label>
                     <input type="text" name="username"  class="form-control" value="<?php echo $user['username'];?>">

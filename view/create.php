@@ -1,3 +1,4 @@
+<?php include "../components/Flash.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,6 +17,14 @@
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h1>Create new user</h1>
+
+                <?php if (Flash::flashExists('danger')):?>
+                    <div class="alert alert-success">
+                        <?php Flash::flashString('danger');?>
+                    </div>
+                <?php endif;?>
+
+
                 <form action="../store.php" method="POST" class="form-control">
                     <label for="username" class="col-form-label">User name</label>
                     <input type="text" name="username"  class="form-control" placeholder="Username">
