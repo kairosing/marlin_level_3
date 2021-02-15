@@ -1,3 +1,14 @@
+<?php
+include "../functions/functions.php";
+$db = include "../database/start.php";
+
+$id = $_GET['id'];
+$user = $db->getOne('users', $id);
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -19,12 +30,12 @@
                 <div class="alert alert-danger"></div>
                     <div class="alert alert-success">
                     </div>
-                <form action="" method="post" class="form-control">
+                <form action="../update.php?id=<?php echo $user['id'];?>" method="post" class="form-control">
                     <label for="username" class="col-form-label">User name</label>
-                    <input type="text"  class="form-control" value="">
+                    <input type="text" name="username"  class="form-control" value="<?php echo $user['username'];?>">
                     <label for="email" class="col-form-label">Email</label>
-                    <input type="text" class="form-control" value="">
-                    <input type="hidden" value="">
+                    <input type="text" name="email" class="form-control" value="<?php echo $user['email'];?>">
+                    <input type="hidden" name="id" value="<?php echo $user['id'];?>">
                     <hr>
                     <button type="submit" class="btn btn-warning">Edit</button>
                 </form>

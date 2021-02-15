@@ -1,3 +1,11 @@
+<?php
+
+$db = include "../database/start.php";
+$users = $db->getAll('users');
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,11 +58,11 @@
                     <tbody>
                     <?php foreach ($users as $user):?>
                         <tr>
-                            <td><?php echo $user['id']?></td>
-                            <td><?php echo $user['username']?></td>
-                            <td><?php echo $user['email']?></td>
-                            <td><a href="edit.php" class="btn btn-warning">Edit</a></td>
-                            <td><a href="delete.php" class="btn btn-danger" onclick="return confirm('Delete this user?');">Delete</a></td>
+                            <td><?php echo $user['id'];?></td>
+                            <td><a href="../show.php?id=<?php echo $user['id'];?><"><?php echo $user['username'];?></a></td>
+                            <td><?php echo $user['email'];?></td>
+                            <td><a href="../view/edit.php?id=<?php echo $user['id'];?>" class="btn btn-warning">Edit</a></td>
+                            <td><a href="../view/delete.php?id=<?php echo $user['id'];?>" class="btn btn-danger" onclick="return confirm('Delete this user?');">Delete</a></td>
                         </tr>
                     <?php endforeach;?>
                     </tbody>

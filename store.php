@@ -9,4 +9,4 @@ $db->create('users', [
 
     ]);
 
-header('Location: ./public/index.php');
+header('Location: /proekt/public');

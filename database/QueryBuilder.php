@@ -30,4 +30,40 @@ class QueryBuilder{
         $statement->execute($date);
 
     }
+
+    public function getOne($table, $id){
+        $sql = "SELECT * FROM users WHERE id=:id";
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute([
+            'id' => $id
+        ]);
+        return $statement->fetch(PDO::FETCH_ASSOC);
+
+    }
+
+    public function update($table, $date, $id)
+    {
+       $keys = array_keys($date);
+
+       $string = '';
+
+       foreach ($keys as $key){
+           $string .= $key . '=:' . $key . ',';
+       }
+       $keys = rtrim($string, ',');
+
+       $date['id'] = $id;
+
+       $sql = "UPDATE {$table} SET {$keys} WHERE id=:id";
+       $statement = $this->pdo->prepare($sql);
+       $statement->execute($date);
+    }
+
+    public function delete($table, $id){
+
+        $sql = "DELETE FROM {$table} WHERE id=:id";
+        $statement = $this->pdo->prepare($sql);
+        $statement->execute(['id' => $id]);
+
+    }
 }

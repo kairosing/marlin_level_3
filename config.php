@@ -1,5 +1,8 @@
 <?php
 
+
+
+
 return [
 
     "database" => [
@@ -7,5 +10,11 @@ return [
         "username" => "root",
         "password" => "",
         "connection" => "mysql:host=localhost"
+    ],
+
+    "routes" => [
+        "/proekt/public/" => '../view/page.php',
+        "/proekt/public/about" => '../functions/about.php',
+
     ],
 ];
