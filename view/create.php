@@ -1,4 +1,5 @@
-<?php  include_once "../components/Flash.php";
+<?php
+include_once "../components/Flash.php";
 include_once "../components/Validator.php";
 ?>
 <!DOCTYPE html>
@@ -22,12 +23,12 @@ include_once "../components/Validator.php";
 
                 <?php if (Flash::flashExists('danger')):?>
                     <div class="alert alert-success">
-                        <?php Flash::flashString('danger');?>
+                        <?php echo Flash::flashString('danger');?>
                     </div>
                 <?php endif;?>
 
 
-                <form action="../create_user.php" method="POST" class="form-control">
+                <form action="/create_user" method="POST" class="form-control">
                     <label for="username" class="col-form-label">User name</label>
                     <input type="text" name="username"  class="form-control" placeholder="Username">
                     <label for="email" class="col-form-label">Email</label>

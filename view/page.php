@@ -3,7 +3,6 @@
 $db = include "../database/start.php";
 $users = $db->getAll('users');
 
-
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +21,7 @@ $users = $db->getAll('users');
     <!-- Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../public/index.php">Users</a>
+            <a class="navbar-brand" href="/">Users</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -31,7 +30,7 @@ $users = $db->getAll('users');
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">About us</a>
+                        <a class="nav-link active" aria-current="page" href="/about">About us</a>
                     </li>
                 </ul>
             </div>
@@ -44,11 +43,11 @@ $users = $db->getAll('users');
         <div class="row">
             <div class="col-md-8 offset-md-2">
             <br>
-            <a href="/proekt/public/create" class="btn btn-success">Add new user</a>
+            <a href="/create" class="btn btn-success">Add new user</a>
             <hr>
-                <?php if (Flash::exists('success')):?>
+                <?php if (Flash::flashExists('success')):?>
             <div class="alert alert-success"></div>
-                <?php echo Flash::display('success')?>
+                <?php echo Flash::flashString('success')?>
             <?php endif;?>
                 <table class="table">
                     <thead class="table">
@@ -62,10 +61,10 @@ $users = $db->getAll('users');
                     <?php foreach ($users as $user):?>
                         <tr>
                             <td><?php echo $user['id'];?></td>
-                            <td><a href="../show.php?id=<?php echo $user['id'];?><"><?php echo $user['username'];?></a></td>
+                            <td><a href="/show?id=<?php echo $user['id'];?><"><?php echo $user['username'];?></a></td>
                             <td><?php echo $user['email'];?></td>
-                            <td><a href="../view/edit.php?id=<?php echo $user['id'];?>" class="btn btn-warning">Edit</a></td>
-                            <td><a href="../view/delete.php?id=<?php echo $user['id'];?>" class="btn btn-danger" onclick="return confirm('Delete this user?');">Delete</a></td>
+                            <td><a href="/edit?id=<?php echo $user['id'];?>" class="btn btn-warning">Edit</a></td>
+                            <td><a href="/delete?id=<?php echo $user['id'];?>" class="btn btn-danger" onclick="return confirm('Delete this user?');">Delete</a></td>
                         </tr>
                     <?php endforeach;?>
                     </tbody>
