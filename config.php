@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 return [
 
     "database" => [
@@ -13,9 +10,15 @@ return [
     ],
 
     "routes" => [
-        "/proekt/public/" => '../view/page.php',
-        "/proekt/public/about" => '../functions/about.php',
-        "/proekt/view/edit" => '../view/edit.php',
+        "/" => '../view/page.php',
+        "/about" => '../functions/about.php',
+        "/edit" => '../view/edit.php',
+        "/create" => '../view/create.php',
+        "/delete" => '../view/delete.php',
+        "/show" => '../show.php',
+        "/404" => '../404/404.php',
+        "/create_user" => '../create_user.php',
+        "/edit_user" => '../edit_user.php',
 
     ],
 ];

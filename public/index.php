@@ -1,19 +1,21 @@
 <?php
 
+require_once "../components/Routes.php";
+require_once "../components/Flash.php";
+require_once "../components/Input.php";
+require_once "../components/Validator.php";
 
-include "../functions/functions.php";
-include "../components/Routes.php";
-include "../components/Flash.php";
+$config = require_once "../config.php";
 
-$config = include "../config.php";
 Routes::page($config['routes']);
 
 
-$db = include "../database/start.php";
+
+$db = require_once "../database/start.php";
 $user = $db->getOne('users', 1);
 
 
 $users = $db->getAll('users');
 
 
-include "../view/page.php";
+require_once "../view/page.php";

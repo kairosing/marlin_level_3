@@ -1,9 +1,11 @@
 <?php
-$db = require_once 'dbstart.php';
+$db = require_once "database/start.php";
+require_once "components/Input.php";
+require_once "components/Validator.php";
+require_once "components/Flash.php";
 $username = $_POST['username'];
 $email = $_POST['email'];
 
-/* Валидация должна срабатывать только после отправки формы */
 if (Input::exists()) {
     $validation = new Validator($db);
 
@@ -11,13 +13,15 @@ if (Input::exists()) {
         'username' => [
             'required' => true,
             'min' => 2,
-            'max' => 30
+            'max' => 30,
+            'unique' => 'users'
         ],
         'email' => [
             'required' => true,
             'email' => true
         ]
     ]);
+
 
     if ($validation->passed()) {
         $db->insert('users', [

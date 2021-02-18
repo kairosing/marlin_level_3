@@ -1,6 +1,6 @@
 <?php
 $config = include __DIR__ . "/../config.php";
-include "QueryBuilder.php";
-include "Connection.php";
+require_once "QueryBuilder.php";
+require_once "Connection.php";
 
 return new QueryBuilder(Connection::make($config['database']));

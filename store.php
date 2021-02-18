@@ -1,7 +1,6 @@
 <?php
 
-include "./functions/functions.php";
-$db = include "./database/start.php";
+$db = require_once "./database/start.php";
 
 $db->create('users', [
         'username' => $_POST['username'],
@@ -9,4 +8,4 @@ $db->create('users', [
 
     ]);
 
-header('Location: /proekt/public');
+header('Location: /');
