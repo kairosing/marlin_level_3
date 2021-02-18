@@ -1,4 +1,6 @@
-<?php include "../components/Flash.php"; ?>
+<?php  include_once "../components/Flash.php";
+include_once "../components/Validator.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,7 +27,7 @@
                 <?php endif;?>
 
 
-                <form action="../store.php" method="POST" class="form-control">
+                <form action="../create_user.php" method="POST" class="form-control">
                     <label for="username" class="col-form-label">User name</label>
                     <input type="text" name="username"  class="form-control" placeholder="Username">
                     <label for="email" class="col-form-label">Email</label>

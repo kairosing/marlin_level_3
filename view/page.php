@@ -44,7 +44,7 @@ $users = $db->getAll('users');
         <div class="row">
             <div class="col-md-8 offset-md-2">
             <br>
-            <a href="../view/create.php" class="btn btn-success">Add new user</a>
+            <a href="/proekt/public/create" class="btn btn-success">Add new user</a>
             <hr>
                 <?php if (Flash::exists('success')):?>
             <div class="alert alert-success"></div>

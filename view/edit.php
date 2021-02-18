@@ -35,9 +35,9 @@ $user = $db->getOne('users', $id);
                 </div>
                 <?php endif;?>
 
-                <?php if (Flash::flashExists('danger')):?>
+                <?php if (Flash::flashExists('success')):?>
                 <div class="alert alert-success">
-                    <?php Flash::flashString('danger');?>
+                    <?php Flash::flashString('success');?>
                 </div>
                 <?php endif;?>
 
