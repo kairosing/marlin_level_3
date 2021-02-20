@@ -27,7 +27,7 @@ $user = $db->getOne('users', $id);
     <div class="row">
         <div class="col-md-8 offset-md-2">
             <h1>Профиль пользователя <?php echo $user['username'];?></h1>
-
+            <a href="/" class="btn btn-primary">Вернуться на главную страницу</a>
             <?php if (Flash::flashExists('danger')):?>
                 <div class="alert alert-danger">
                     <?php Flash::flashString('danger');?>
