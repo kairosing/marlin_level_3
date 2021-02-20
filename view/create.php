@@ -20,7 +20,7 @@ include_once "../components/Validator.php";
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 <h1>Create new user</h1>
-
+                <a href="/" class="btn btn-primary">Вернуться на главную страницу</a>
                 <?php if (Flash::flashExists('danger')):?>
                     <div class="alert alert-success">
                         <?php echo Flash::flashString('danger');?>
