@@ -12,13 +12,13 @@ class Flash
         return (isset($_SESSION[$name])) ? true : false; //&& $_SESSION[$name] !== ''
     }
 
-    public static function display($name){
-        if (self::exists($name)) {
-            $flash_message = $_SESSION[$name];
-            unset($_SESSION[$name]);
-            return $flash_message;
-        }
-    }
+//    public static function display($name){
+//        if (self::exists($name)) {
+//            $flash_message = $_SESSION[$name];
+//            unset($_SESSION[$name]);
+//            return $flash_message;
+//        }
+//    }
 
 
     public static function delete($name){

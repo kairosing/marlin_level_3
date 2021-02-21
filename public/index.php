@@ -9,13 +9,8 @@ $config = require_once "../config.php";
 
 Routes::page($config['routes']);
 
-
-
 $db = require_once "../database/start.php";
 $user = $db->getOne('users', 1);
 
-
 $users = $db->getAll('users');
-var_dump();
-
 require_once "../view/page.php";
